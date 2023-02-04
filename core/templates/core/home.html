@@ -6,13 +6,58 @@
 {% block content %}
 
 <section class="container">
-    <div class="row justify-content-around mt-5">
-        <div class="col-sm-8 border">
-            <h3 class="text-center text-white">CRUD Project in Python Djnago</h3>
+    <div class="row justify-content-around text-center text-white mt-5">
+        <div class="col-sm-8">
+            <h3>CRUD Project in Python Django</h3>
         </div>
-
+    </div>
+    <div class="row justify-content-around mt-5">
+        <div class="col-sm-8">
+            <a href="#" class='btn btn-primary btn-danger float-right'>Delete</a>
+            <a href="" class="btn btn-primary float-right mr-3">ADD</a>
+        </div>
     </div>
 
+    <div class="row justify-content-around text-center text-white mt-3">
+        <div class="col-sm-8">
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Roll</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for i in stud%}
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>{{i.name}}</td>
+                        <td>{{i.roll}}</td>
+                        <td>{{i.city}}</td>
+                        <td>{{i.phone}}</td>
+                        <td>{{i.email}}</td>
+                        <!-- <td>{{i.city}}</td> -->
+                    </tr>
+                    <!-- <tr>
+                        <th scope="row">2</th>
+                        <td>{{i.name}}</td>
+                        <td>{{i.roll}}</td>
+                        <td>{{i.city}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>{{i.name}}</td>
+                        <td>{{i.roll}}</td>
+                        <td>{{i.city}}</td> -->
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </section>
-
-{%endblock content%}
+{% endblock content %}
