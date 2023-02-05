@@ -1,0 +1,24 @@
+{%extends 'core/home.html'%}
+
+{% block title %}add{%endblock title%}
+<!-- {%load static%} -->
+{% block content %}
+
+<section class="container">
+    <div class="row justify-content-around text-center text-white mt-5">
+        <div class="col-sm-8">
+            <h3>CRUD Project in Python Django</h3>
+        </div>
+    </div>
+    <div class="row justify-content-around mt-4">
+        <div class="col-sm-8">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{fm}}
+                <input type="submit" ,name="Submit" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+</section>
+
+{%endblock content%}

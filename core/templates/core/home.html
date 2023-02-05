@@ -13,8 +13,8 @@
     </div>
     <div class="row justify-content-around mt-5">
         <div class="col-sm-8">
-            <a href="#" class='btn btn-primary btn-danger float-right'>Delete</a>
-            <a href="" class="btn btn-primary float-right mr-3">ADD</a>
+            <!-- <a href="#" class='btn btn-primary btn-danger float-right'>Delete</a> -->
+            <a href="{% url 'addFunc' %}" class="btn btn-primary float-right mr-3">ADD</a>
         </div>
     </div>
 
@@ -29,18 +29,20 @@
                         <th scope="col">City</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     {%for i in stud%}
                     <tr>
-                        <th scope="row">1</th>
+                        <th scope="row">{{forloop.counter}}</th>
                         <td>{{i.name}}</td>
                         <td>{{i.roll}}</td>
                         <td>{{i.city}}</td>
                         <td>{{i.phone}}</td>
                         <td>{{i.email}}</td>
-                        <!-- <td>{{i.city}}</td> -->
+                        <td><a class="btn btn-sm btn-primary" href="{% url 'update_Form' i.id%}">Update</a></td>
+                        <td><a class="btn btn-sm btn-danger" href="{% url 'deleteForm' i.id%}">Delete</a></td>
                     </tr>
                     <!-- <tr>
                         <th scope="row">2</th>
